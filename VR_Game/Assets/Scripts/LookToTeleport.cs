@@ -8,9 +8,28 @@ public class LookToTeleport : MonoBehaviour
     private float gazeTimer = 0f;
 
     private OutlineOnLook currentPlatform = null;
+    
+    public float moveSpeed = 2f; // Speed of smooth movement
+    private bool isTeleporting = false;
+    private Vector3 targetPosition;
 
     void Update()
     {
+        if (isTeleporting)
+        {
+            // Move player towards target position smoothly
+            float step = moveSpeed * Time.deltaTime;
+            playerTransform.position = Vector3.MoveTowards(playerTransform.position, targetPosition, step);
+
+            // Check if close enough to stop
+            if (Vector3.Distance(playerTransform.position, targetPosition) < 0.01f)
+            {
+                isTeleporting = false;
+                Debug.Log("Teleportation complete.");
+            }
+            return;
+        }
+
         if (raycaster.outline != null)
         {
             // Player is looking at a platform
@@ -34,9 +53,13 @@ public class LookToTeleport : MonoBehaviour
                 if (gazeTimer >= teleportDelay)
                 {
                     // Teleport the player
-                    TeleportPlayer(currentPlatform.transform);
+                    //TeleportPlayer(currentPlatform.transform);
                     // Reset timer to prevent repeated teleportation
                     gazeTimer = 0f;
+
+                    // Start smooth teleport
+                    targetPosition = currentPlatform.transform.position;
+                    isTeleporting = true;
                 }
             }
         }

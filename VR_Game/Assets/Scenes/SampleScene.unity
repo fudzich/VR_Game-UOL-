@@ -1674,8 +1674,7 @@ GameObject:
   - component: {fileID: 2093951069}
   - component: {fileID: 2093951068}
   - component: {fileID: 2093951071}
-  - component: {fileID: 2093951072}
-  - component: {fileID: 2093951073}
+  - component: {fileID: 2093951074}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: MainCamera
@@ -1746,23 +1745,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 72
---- !u!114 &2093951072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093951067}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb0b2fb649d9824786d4bdaa4f496b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TeleportOnButtonPress
-  raycaster: {fileID: 2093951071}
-  playerRig: {fileID: 2093951067}
-  shakeThreshold: 20
-  shakeDetectionTime: 0.3
---- !u!114 &2093951073
+--- !u!114 &2093951074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1771,11 +1754,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2093951067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d725310ba14cb46bd888ebf1a8abac, type: 3}
+  m_Script: {fileID: 11500000, guid: f13cbed5e403bf64cbbcb300c3401b35, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TeleportOnLeftTriggerAutoDetect
+  m_EditorClassIdentifier: Assembly-CSharp::LookToTeleport
   raycaster: {fileID: 2093951071}
-  playerRig: {fileID: 2093951067}
+  teleportDelay: 2
+  playerTransform: {fileID: 2093951070}
+  moveSpeed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

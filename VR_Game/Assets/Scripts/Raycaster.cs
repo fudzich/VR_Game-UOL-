@@ -12,9 +12,9 @@ public class Raycaster : MonoBehaviour
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 250, layerMask))
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 2500, layerMask))
         {
-            if(hit.transform.TryGetComponent (out OutlineOnLook outline))
+            if(hit.transform.TryGetComponent(out OutlineOnLook outline))
             {
                 if(this.outline != outline)
                 {
@@ -23,6 +23,8 @@ public class Raycaster : MonoBehaviour
 
                 this.outline = outline;
                 outline.Outline(true);
+
+                Debug.Log("Change Outline");
             }
             else
             {
@@ -30,7 +32,7 @@ public class Raycaster : MonoBehaviour
                 this.outline = default;
             }
 
-            Debug.Log("In");
+            //Debug.Log("In");
         }
         else
         {

@@ -11,6 +11,6 @@ public class OutlineOnLook : MonoBehaviour
     }
 
     public void Outline(bool show){
-        mat.SetFloat("_ShowOutline", show ? 1 : 0);
+        mat.SetFloat("_Show_Outline", show ? 1 : 0);
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Raycaster : MonoBehaviour
 {
     public Camera cam;
-    OutlineOnLook outline;
+    public OutlineOnLook outline;
 
     public LayerMask layerMask;
 

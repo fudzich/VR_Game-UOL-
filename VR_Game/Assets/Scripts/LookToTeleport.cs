@@ -54,6 +54,7 @@ public class LookToTeleport : MonoBehaviour
                 {
                     // Teleport the player
                     //TeleportPlayer(currentPlatform.transform);
+                    
                     // Reset timer to prevent repeated teleportation
                     gazeTimer = 0f;
 

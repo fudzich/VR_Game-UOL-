@@ -1760,7 +1760,7 @@ MonoBehaviour:
   raycaster: {fileID: 2093951071}
   teleportDelay: 2
   playerTransform: {fileID: 2093951070}
-  moveSpeed: 10
+  moveSpeed: 8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

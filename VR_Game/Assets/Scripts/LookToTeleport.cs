@@ -53,14 +53,14 @@ public class LookToTeleport : MonoBehaviour
                 if (gazeTimer >= teleportDelay)
                 {
                     // Teleport the player
-                    //TeleportPlayer(currentPlatform.transform);
+                    TeleportPlayer(currentPlatform.transform);
                     
                     // Reset timer to prevent repeated teleportation
                     gazeTimer = 0f;
 
                     // Start smooth teleport
-                    targetPosition = currentPlatform.transform.position;
-                    isTeleporting = true;
+                        //targetPosition = currentPlatform.transform.position;
+                        //isTeleporting = true;
                 }
             }
         }

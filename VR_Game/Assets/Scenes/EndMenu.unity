@@ -5733,6 +5733,7 @@ GameObject:
   - component: {fileID: 1841666969}
   - component: {fileID: 1841666968}
   - component: {fileID: 1841666972}
+  - component: {fileID: 1841666973}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: MainCamera
@@ -5817,6 +5818,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LookToUseButtons
   raycaster: {fileID: 1841666968}
   activationDelay: 2
+--- !u!81 &1841666973
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841666966}
+  m_Enabled: 1
 --- !u!1001 &1873481495
 PrefabInstance:
   m_ObjectHideFlags: 0

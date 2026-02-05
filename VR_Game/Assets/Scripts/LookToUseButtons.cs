@@ -7,7 +7,17 @@ public class LookToUseButtons : MonoBehaviour
     public float activationDelay = 2f; // Time in seconds to look
     private float gazeTimer = 0f;
 
+    public AudioSource ms;
+    public AudioClip clip;
+
     private OutlineOnLook currentPlatform = null;
+
+    void Start(){
+        //if(ms != null){
+            ms = GetComponent<AudioSource>();
+        //}
+        
+    }
 
     void Update()
     {
@@ -48,6 +58,10 @@ public class LookToUseButtons : MonoBehaviour
 
     void ActivateButtons(GameObject button)
     {
+        if(ms != null && clip != null){
+            ms.PlayOneShot(clip);
+        }
+
         if(button.name == "Start Game"){
              SceneManager.LoadScene("SampleScene");
         }

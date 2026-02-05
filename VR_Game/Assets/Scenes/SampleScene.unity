@@ -41646,6 +41646,7 @@ GameObject:
   - component: {fileID: 2093951074}
   - component: {fileID: 2093951075}
   - component: {fileID: 2093951076}
+  - component: {fileID: 2093951077}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: MainCamera
@@ -41765,6 +41766,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3462f4b256f3aba44b054d3e3fa163db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndGame
+--- !u!81 &2093951077
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093951067}
+  m_Enabled: 1
 --- !u!1001 &2094474558
 PrefabInstance:
   m_ObjectHideFlags: 0

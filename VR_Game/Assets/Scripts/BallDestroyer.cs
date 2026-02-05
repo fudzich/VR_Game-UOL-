@@ -7,6 +7,7 @@ public class BallDestroyer : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             Destroy(other.gameObject);
+            DataHolder.points++;
         }
     }
 }

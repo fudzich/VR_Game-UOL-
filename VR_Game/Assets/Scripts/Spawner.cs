@@ -11,9 +11,16 @@ public class Spawner : MonoBehaviour
 
     private float spawnInterval;
 
+    public AudioSource ms;
+    public AudioClip clip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(ms != null){
+            ms = GetComponent<AudioSource>();
+        }
+
         // Generate a random spawn interval between min and max
         spawnInterval = Random.Range(minInterval, maxInterval);
         // Start the spawning coroutine
@@ -41,6 +48,10 @@ public class Spawner : MonoBehaviour
     // Call this method to spawn the prefab
     public void SpawnPrefab()
     {
+        if(ms != null && clip != null){
+            ms.PlayOneShot(clip);
+        }
+        
         if (prefabToSpawn != null)
         {
             GameObject newBall = Instantiate(prefabToSpawn, transform.position, transform.rotation);

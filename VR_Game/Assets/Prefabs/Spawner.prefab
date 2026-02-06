@@ -50,6 +50,8 @@ MonoBehaviour:
   maxInterval: 5
   maxBalls: 3
   forceAlongX: -500
+  ms: {fileID: 219283429014243302}
+  clip: {fileID: 8300000, guid: 13040394bf9f15241917c5b2a77aa835, type: 3}
 --- !u!82 &219283429014243302
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63,7 +65,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.09
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -72,7 +74,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

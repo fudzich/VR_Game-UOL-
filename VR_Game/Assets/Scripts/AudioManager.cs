@@ -10,8 +10,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip ambient;
     public AudioClip buttonClick;
 
+    public static AudioManager instance;
+
     private void Awake(){
-        DontDestroyOnLoad(gameObject);
+        if(instance == null){
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else{
+            Destroy(gameObject);
+        }
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

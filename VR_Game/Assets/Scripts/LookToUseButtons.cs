@@ -7,14 +7,20 @@ public class LookToUseButtons : MonoBehaviour
     public float activationDelay = 2f; // Time in seconds to look
     private float gazeTimer = 0f;
 
-    public AudioSource ms;
-    public AudioClip clip;
+    AudioManager audioManager;
+
+    //public AudioSource ms;
+    //public AudioClip clip;
 
     private OutlineOnLook currentPlatform = null;
 
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start(){
         //if(ms != null){
-            ms = GetComponent<AudioSource>();
+        //    ms = GetComponent<AudioSource>();
         //}
         
     }
@@ -58,9 +64,10 @@ public class LookToUseButtons : MonoBehaviour
 
     void ActivateButtons(GameObject button)
     {
-        if(ms != null && clip != null){
-            ms.PlayOneShot(clip);
-        }
+        //if(clip != null){
+        //    AudioManager.PlaySFX(clip);
+        //}
+        audioManager.PlaySFX(audioManager.buttonClick);
 
         if(button.name == "Start Game"){
              SceneManager.LoadScene("SampleScene");

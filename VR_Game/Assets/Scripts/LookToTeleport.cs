@@ -2,33 +2,17 @@ using UnityEngine;
 
 public class LookToTeleport : MonoBehaviour
 {
-    public Raycaster raycaster; // Reference to your Raycaster script
+    public Raycaster raycaster; // Reference to the Raycaster script
     public float teleportDelay = 2f; // Time in seconds to look before teleporting
     public Transform playerTransform; // Player's transform, to teleport
     private float gazeTimer = 0f;
 
     private OutlineOnLook currentPlatform = null;
     
-    public float moveSpeed = 2f; // Speed of smooth movement
-    private bool isTeleporting = false;
     private Vector3 targetPosition;
 
     void Update()
     {
-        if (isTeleporting)
-        {
-            // Move player towards target position smoothly
-            float step = moveSpeed * Time.deltaTime;
-            playerTransform.position = Vector3.MoveTowards(playerTransform.position, targetPosition, step);
-
-            // Check if close enough to stop
-            if (Vector3.Distance(playerTransform.position, targetPosition) < 0.01f)
-            {
-                isTeleporting = false;
-                Debug.Log("Teleportation complete.");
-            }
-            return;
-        }
 
         if (raycaster.outline != null)
         {
@@ -54,13 +38,8 @@ public class LookToTeleport : MonoBehaviour
                 {
                     // Teleport the player
                     TeleportPlayer(currentPlatform.transform);
-                    
-                    // Reset timer to prevent repeated teleportation
+                    // Reset timer
                     gazeTimer = 0f;
-
-                    // Start smooth teleport
-                        //targetPosition = currentPlatform.transform.position;
-                        //isTeleporting = true;
                 }
             }
         }
@@ -76,9 +55,7 @@ public class LookToTeleport : MonoBehaviour
     {
         if (playerTransform != null && targetTransform != null)
         {
-            // Optional: Adjust position to avoid clipping or positioning at a good spot
             Vector3 targetPosition = targetTransform.position;
-
             // Teleport the player
             playerTransform.position = targetPosition;
 

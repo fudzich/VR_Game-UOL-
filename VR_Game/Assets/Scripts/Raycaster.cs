@@ -7,7 +7,6 @@ public class Raycaster : MonoBehaviour
 
     public LayerMask layerMask;
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
@@ -32,7 +31,6 @@ public class Raycaster : MonoBehaviour
                 this.outline = default;
             }
 
-            //Debug.Log("In");
         }
         else
         {

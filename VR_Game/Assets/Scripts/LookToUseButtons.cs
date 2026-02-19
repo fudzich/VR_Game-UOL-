@@ -3,14 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class LookToUseButtons : MonoBehaviour
 {
-    public Raycaster raycaster; // Reference to your Raycaster script
+    public Raycaster raycaster; // Reference to the Raycaster script
     public float activationDelay = 2f; // Time in seconds to look
     private float gazeTimer = 0f;
 
     AudioManager audioManager;
-
-    //public AudioSource ms;
-    //public AudioClip clip;
 
     private OutlineOnLook currentPlatform = null;
 
@@ -18,27 +15,20 @@ public class LookToUseButtons : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    void Start(){
-        //if(ms != null){
-        //    ms = GetComponent<AudioSource>();
-        //}
-        
-    }
-
     void Update()
     {
         if (raycaster.outline != null)
         {
-            // Player is looking at a platform
+            // Player is looking at a button
             if (raycaster.outline != currentPlatform)
             {
-                // New platform looked at, reset timer
+                // New platformbutton looked at, reset timer
                 currentPlatform = raycaster.outline;
                 gazeTimer = 0f;
             }
             else
             {
-                // Continuing to look at the same platform
+                // Continuing to look at the same button
                 gazeTimer += Time.deltaTime;
 
                 // Calculate remaining time
@@ -46,17 +36,16 @@ public class LookToUseButtons : MonoBehaviour
 
                 if (gazeTimer >= activationDelay)
                 {
-                    // Activate Platform
+                    // Activate Button
                     ActivateButtons(currentPlatform.gameObject);
-                    
-                    // Reset timer to prevent repeated teleportation
+                    // Reset timer
                     gazeTimer = 0f;
                 }
             }
         }
         else
         {
-            // Not looking at any platform
+            // Not looking at any button
             currentPlatform = null;
             gazeTimer = 0f;
         }
@@ -64,9 +53,6 @@ public class LookToUseButtons : MonoBehaviour
 
     void ActivateButtons(GameObject button)
     {
-        //if(clip != null){
-        //    AudioManager.PlaySFX(clip);
-        //}
         audioManager.PlaySFX(audioManager.buttonClick);
 
         if(button.name == "Start Game"){

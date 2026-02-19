@@ -4,23 +4,12 @@ using System.Collections;
 public class SingleSpawner : MonoBehaviour
 {
 
-    public GameObject prefabToSpawn; // Assign your prefab in the inspector
-    public float forceAlongX = -500f; // Force magnitude applied
+    public GameObject prefabToSpawn;
+    public float forceAlongX = -500f;
     
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SpawnPrefab();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        ///{
-        //    SpawnPrefab();
-        //}
     }
 
     public void SpawnPrefab()

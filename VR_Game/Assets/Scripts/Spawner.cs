@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject prefabToSpawn; // Assign your prefab in the inspector
+    public GameObject prefabToSpawn;
     public float minInterval = 1f;   // Minimum spawn interval
     public float maxInterval = 5f;   // Maximum spawn interval
     public int maxBalls = 3;         // Maximum number of balls allowed
@@ -14,7 +14,6 @@ public class Spawner : MonoBehaviour
     public AudioSource ms;
     public AudioClip clip;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if(ms != null){
@@ -45,7 +44,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    // Call this method to spawn the prefab
     public void SpawnPrefab()
     {
         if(ms != null && clip != null){

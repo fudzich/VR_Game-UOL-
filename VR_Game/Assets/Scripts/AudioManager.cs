@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    //Make AudioManager permanent across scenes not to make ambient consistent 
     private void Awake(){
         if(instance == null){
             instance = this;
@@ -23,7 +24,6 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         BGMSource.clip = ambient;

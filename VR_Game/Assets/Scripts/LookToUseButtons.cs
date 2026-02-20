@@ -69,6 +69,7 @@ public class LookToUseButtons : MonoBehaviour
         }
 
         if(button.name == "Return To Menu"){
+            DataHolder.points = 0;
             SceneManager.LoadScene("MainMenu");
         }
     }
